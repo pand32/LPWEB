@@ -1,0 +1,23 @@
+body {
+	color: rgb(235, 64, 52);
+	background: rgb(121, 128, 133);
+}
+nav{
+	
+	justify-content: space-between;
+	
+}
+nav ul{
+	display: flex;
+	justify-content: space-between;
+	padding: 20px;
+}
+ #Azul {	
+		color : rgb(50, 159, 237);
+	}
+.Vermelho{
+		color: rgb(252, 3, 98);
+	}
+.container{
+		color: rgb(252, 3, 98);
+	}
