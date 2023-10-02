@@ -1,14 +1,15 @@
+/*Comum*/
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: content-box;
     font-size: 25px;
+    font-family:verdana"
 }
 
+/*body*/
 html,
 body {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     margin: 0px;
     overflow: hidden;
 }
@@ -20,15 +21,15 @@ body {
 .column {
     display: flex;
     flex-direction: row;
-    height: 100%;
-    width: 100%;
+    height: 80vh;
+    width: 100vw;
 }
 
 .container {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
 }
 
 .header {
@@ -36,8 +37,39 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: rgba(20, 20, 20, 1);
-    height: 10%;
-    width: 100%;
+    height: 10vh;
+    width: 100vw;
+    translate: 0vw 0vh;
+}
+        
+#left {
+    width: 2vw;
+    height: 80vh;
+    background-color: rgba(20, 20, 20, 1);
+}
+
+#right {
+    width: 17vw;
+    height: 80vh;
+    background-color: rgba(20, 20, 20, 1);
+}
+
+#center {
+    width: 81vw;
+    height: 80vh;
+    background-color: rgb(128, 156, 156);
+    border-radius: 50px;   
+    flex-direction: row;     
+}
+
+
+.footer {
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(20, 20, 20, 1);
+    height: 10vh;
+    width: 100vw;
+    translate: 0vw 0vh;
 }
 
 .logo {
@@ -48,39 +80,12 @@ body {
 }
 
 .tela {
-    padding-left: 10%;
-    padding-right: 10%;
-}
+    padding-left: 1vw;
+    padding-right: 1vw;
+    translate: 1vw 8vh;
+    height: 20vh;
+    width: 30vw;
 
-.tabela {
-    background-color: white;
-    padding-top: 10%;
-    padding-bottom: 10%;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    border-style: solid;
-    border-width: 8px;
-    border-color: #000000;
-    border-collapse: collapse;
-    padding: 5% 5% 5% 5%;
-}
-
-.tabela a {
-    text-decoration: none;
-    color: #000000;
-    padding: 1% 2%;
-    border-radius: 2%;
-    padding: 5%;
-    padding-left: 5%;
-    text-align: center;
-    justify-content: space-around;
-    align-items: center;
-    font-size: 20px;
-}
-
-.tabela a:hover {
-    color: blue;
 }
 
 td,
@@ -104,16 +109,17 @@ td {
 
 #divImg {
     display: flex;
-    padding: 30% 10% 1% 10%;
-    height: 20%;
+    translate: 4vw 2vh;
+    height: 7vw;
+    width: 10vw;    
 }
 
-#GrandImg {
+#grandImg {
     display: flex;
     flex-direction: row;
 }
 
-#Img {
+#img {
     padding: 20% 20% 5% 55%;
     display: flex;
     width: 70%;
@@ -134,15 +140,10 @@ td {
     padding: 0% 0% 0% 55%;
 }
 
-#contato{
-    padding-top: 24%;
-    padding-left: 22%;
-}
 #inicio{
     padding-top: 25%;
     padding-left: 36%;
 }
-
 
 .icon {
     width: 60%;
@@ -159,27 +160,8 @@ td {
 .content {
     display: flex;
 }
-        
-#left {
-    width: 2%;
-    height: 100%;
-    background-color: rgba(20, 20, 20, 1);;
-}
 
-#right {
-    width: 17%;
-    height: 100%;
-}
-
-#center {
-    width: 81%;
-    height: 100%;
-    background-color: rgb(128, 156, 156);
-    border-radius: 50px;   
-    flex-direction: row;     
-}
-
-.panel {
+.painel {
     width: 100%;
     height: 100%;
     background-color: rgba(20, 20, 20, 1);
@@ -188,16 +170,134 @@ td {
 }
 
 .text {
-    padding: 15% 15% 10% 15%;
+    width: 100%;
+    height: 100%;
     align-content: center;
-    text-align: left;
-    
+    text-align: center;
 }
 
-.text p {
-    background-color: rgb(192, 185, 185, 20%);
-    color: rgb(229, 255, 0);
-    border-radius: 14px;
-    padding: 2% 0% 2% 0%;
+.centroT {
+    background-color: rgb(233, 233, 152);
+    box-shadow: 0 0 .5rem rgb(255, 255, 255);
+    padding: .5rem 1rem;
+    box-sizing: border-box;
+    translate: 3vh 1vw;
+    height: 68vh;
+    width: 78vw;
+    border-radius: 2px;
+    transform-style: preserve-3d;
+    animation: parado3d 10s linear infinite;
+}
+
+@keyframes girar3d {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes parado3d {
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+#inicioT {
+    padding-top: 33vh;
+}
+
+#contatoT {
+    padding-top: 5vh;
+}
+
+#empresaT {
+    padding-top: 5vh;
+    text-align: center;
+}
+
+.boxT {
+    text-align: left;
+    height: 3vh;
+    width: 50vw;
+}
+
+.enviar {
+    height: 1.5vw;
+    width: 6vw;
+    font-size: 70%;
+}
+
+#mensagem {
+    height: 10vh;
+}
+
+
+.tabela {
+    width: 14vw;
+    background-color: white;
+    border-radius: 20px;
+}
+
+#sites {
+    height: 5vw;
+    translate: 0vw -4vh;
+}
+
+#navegacao {
+    height: 5vw;
+    translate: 0vw -3vh;
+}
+
+.tabela a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 1vw;
+}
+
+.tabela a:hover {
+    color: blue;
+}
+
+.botao {
+    height: 1.6vw;
+    width: 5vw;
+    border-color: #000000;
     border-radius: 10px;
+    box-shadow: 0 0 0 0.1vw rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botao img {
+    height: 1.4vw;
+    width: 1.4vw;
+}
+
+/*imagens*/
+#botaoInterno1 {
+    translate: 20% 20%;
+}
+
+#botaoInterno2 {
+    translate: 160% -80%;
+}
+
+#botaoInterno3 {
+    translate: 20% -30%;
+}
+
+#botaoInterno4 {
+    translate: 160% -130%;
+}
+
+.botaoText {
+    text-align: center;
+}
+
+.numPad {
+    background-color: white;
+    border: white;
 }
