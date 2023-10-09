@@ -1,0 +1,159 @@
+/*Comum*/
+* {
+    box-sizing: content-box;
+    font-size: 25px;
+    font-family: "verdana"
+}
+
+/*body*/
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+body {
+    display: flex;
+    background-color: #a3a3a3;    
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    height: 10vh;
+    width: 100vw;
+    translate: 0vw 0vh;
+}
+
+.footer {
+    background-color: rgb(0, 0, 0);
+    height: 4vh;
+    width: 100vw;
+    margin-top: 10vh;
+}
+
+.logo {
+    display: flex;
+    margin-left: 3%;
+}
+
+#logo {
+    height: 7vh;
+    padding-left: 2vw;
+}
+
+#logoT {
+    padding-top: 2vh;
+    padding-left: 2vw;
+    font-size: 100%;
+    font-weight: bold;
+    color: #ff5656;
+}
+
+
+.link a {
+    text-decoration: none;
+    color: rgb(100, 100, 253);
+    font-size: 80%;
+    border-color: #000000;
+    border-radius: 10px;
+}
+
+.link a:hover {
+    color: rgb(193, 193, 255);
+}
+
+#index {
+    translate: 33vw 0vh;
+}
+#empresa {
+    translate: 14vw 0vh;
+}
+#contato {
+    translate: -5vw 0vh;
+}
+
+.produtos {
+    display: grid;
+    grid-column-gap: 0px;
+    grid-row-gap: 2.4em;
+    translate: 10vw 6vh;
+}
+
+@media (min-width: 100px) {
+    .produtos { grid-template-columns: repeat(1,  0.29fr); }
+    #logoT {font-size: 15px;}
+    #index { translate: 0vw 0vh; font-size: 20px;}
+    #empresa { translate: -5vw 0vh; font-size: 20px; }
+    #contato { translate: -10vw 0vh; font-size: 20px; }
+}
+
+@media (min-width: 1200px) {
+    .produtos { grid-template-columns: repeat(2,  2fr); }
+    #index { translate: 15vw 0vh; }
+    #empresa { translate: 2vw 0vh; }
+    #contato { translate: -10vw 0vh; }
+}
+
+@media (min-width: 1910px) {
+    .produtos { grid-template-columns: repeat(3, 0.29fr);}
+}
+
+.produtos p {
+    max-width: 20ch;
+    line-break: strict;
+    word-wrap: break-word;
+    text-align: center;
+    padding-top: 2px;
+    padding-left: 120px;
+    
+}
+
+.produto {
+    border-color: #000000;
+    border-radius: 30px;
+    box-shadow: 0 0 0 0.3vw rgb(117, 29, 29);
+    background-color: rgb(255, 255, 255, 0.7);
+    height: 500px;
+    width: 570px;
+}
+
+
+
+.boxImg img{
+    height: 150px;
+    width: 300px;
+    translate: 150px 20px;
+    border-radius: 20px;
+}
+
+.boxText {
+    text-align: center;
+    padding-top: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
