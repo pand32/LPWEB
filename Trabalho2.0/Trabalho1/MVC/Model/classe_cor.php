@@ -27,5 +27,5 @@ class Cor {
         $this->desc_cor = $pDesc_cor;
     }
 
-    $Cor1 = new Cor;
-}
+}    
+$Cor1 = new Cor;
