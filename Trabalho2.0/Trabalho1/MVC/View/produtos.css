@@ -8,7 +8,7 @@
 /*body*/
 html,
 body {
-    width: 100%;
+    width: 100vw;
     height: 100%;
     margin: 0px;
 }
@@ -83,13 +83,14 @@ body {
 }
 
 .produtos {
+    font-style: italic;
     display: grid;
     grid-column-gap: 0px;
     grid-row-gap: 2.4em;
     translate: 10vw 6vh;
 }
 
-@media (min-width: 100px) {
+@media (min-width: 0px) {
     .produtos { grid-template-columns: repeat(1,  0.29fr); }
     #logoT {font-size: 15px;}
     #index { translate: 0vw 0vh; font-size: 20px;}
@@ -98,7 +99,7 @@ body {
 }
 
 @media (min-width: 1200px) {
-    .produtos { grid-template-columns: repeat(2,  2fr); }
+    .produtos { grid-template-columns: repeat(2,  0.5fr); }
     #index { translate: 15vw 0vh; }
     #empresa { translate: 2vw 0vh; }
     #contato { translate: -10vw 0vh; }
@@ -140,7 +141,10 @@ body {
     text-align: center;
     padding-top: 30px;
 }
-
+.preco{
+    font-style:oblique;
+    color:firebrick;
+}
 
 
 
