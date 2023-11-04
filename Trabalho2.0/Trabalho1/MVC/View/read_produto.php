@@ -1,6 +1,6 @@
 <?php
 require_once("mysqli_conexao.php");
-$result = mysqli_query($conn, "SELECT * FROM PRODUTO");
+$result = mysqli_query($conn, "SELECT * FROM produto");
 ?>
 <html>
   <head>
@@ -19,7 +19,7 @@ $result = mysqli_query($conn, "SELECT * FROM PRODUTO");
       <?php
       while ($res = mysqli_fetch_assoc($result)) {         
         echo "<tr>";
-        echo "<td>".$res['nome_produto']."</td>";
+        echo "<td>".$res['desc_produto']."</td>";
         echo "<td><a href='edit_produto.php?id_produto=$res[id_produto]'>Editar</a>|
                    <a href='del_produto.php?id_produto=$res[id_produto]' 
                   onClick=\"return confirm('Tem certeza?')\">Deletar</a></td>";

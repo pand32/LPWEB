@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Adicionando Cor</title>
+    <title>Adicionando Cor</title>;;;
   </head>
 <body>    
 <?php

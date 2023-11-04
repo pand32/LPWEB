@@ -3,10 +3,15 @@
 
     $id_produto = $_GET['id_produto'];
 
-    $result = mysqli_query($conn, "SELECT * FROM PRODUTO WHERE id_produto=$id_produto");
+    $result = mysqli_query($conn, "SELECT * FROM produto WHERE id_produto=$id_produto");
     $resultData = mysqli_fetch_assoc($result);
 
-    $desc = $resultData['nome_produto'];
+    $desc_produto = $resultData['desc_produto'];
+    $id_produto = $resultData['id_produto'];
+    $capacidade = $resultData['capacidade'];
+    $vlr_sugerido = $resultData['vlr_sugerido'];
+    $vlr_custo = $resultData['vlr_custo'];
+    $voltagem = $resultData['voltagem'];
 ?>
 <html>
     <head>
@@ -24,16 +29,16 @@
             <input type="hidden" name="id_produto" value="<?php echo $id_produto ?>">
 
         <p>Capacidade</p>
-            <input type="text" name="capacidade">
+            <input type="text" name="capacidade" value="<?php echo $capacidade; ?>">
 
         <p>Valor Sugerido</p>
-            <input type="text" name="vlr_sugerido">
+            <input type="text" name="vlr_sugerido" value="<?php echo $vlr_sugerido; ?>">
 
         <p>Valor de Custo</p>
-            <input type="text" name="vlr_custo">
+            <input type="text" name="vlr_custo" value="<?php echo $vlr_custo; ?>">
 
         <p>Voltagem</p>
-            <input type="text" name="voltagem">
+            <input type="text" name="voltagem" value="<?php echo $voltagem; ?>">
 
                 <input type="submit" name="update" value="Atualizar">
 

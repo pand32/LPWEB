@@ -9,10 +9,10 @@ if(isset($_POST['update'])){
     $vlr_custo = mysqli_real_escape_string($conn, $_POST['vlr_custo']);
     $voltagem = mysqli_real_escape_string($conn, $_POST['voltagem']);
 
-    if(empty($desc)) {
+    if(empty($desc_produto)) {
         echo "<font color='red'>Produto precisa ser preenchido</font>";
     } else {
-        $result = mysqli_query($conn, "UPDATE PRODUTO SET desc_produto='$desc_produto' WHERE id_produto=$id");
+        $result = mysqli_query($conn, "UPDATE produto SET desc_produto='$desc_produto' WHERE id_produto=$id_produto");
         echo "<font color='green'>Produto atualizado";
     }
     echo "<a href='read_produto.php'>Voltar para a lista de produtos";
