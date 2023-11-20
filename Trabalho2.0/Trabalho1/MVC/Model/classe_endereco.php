@@ -58,6 +58,7 @@ class Endereco {
     function SetLogradouroo(string $pLogradouro){
         $this->logradouro = $pLogradouro;
     }
+
     function GetNumero(){
         return $this->numero;
     }
@@ -65,21 +66,27 @@ class Endereco {
     function SetNumero(string $pNumero){
         $this->numero = $pNumero;
     }
+
     function GetComplemento(){
         return $this->complemento;
     }
+
     function SetComplemento(string $Complemento){
         $this->complemento = $pComplemento;
     }
+
     function GetCep(){
         return $this->cep;
     }
+
     function SetCep(string $Cep){
         $this->cep= $pCep;
     }
+
     function GetBairro(){
         return $this->bairro;
     }
+
     function SetBairro(string $Bairro){
         $this->bairro= $pBairro;
     }
@@ -87,6 +94,7 @@ class Endereco {
     function GetCidade(){
         return $this->cidade;
     }
+
     function SetCidade(string $Cidade){
         $this->cidade= $pCidade;
     }
@@ -94,6 +102,7 @@ class Endereco {
     function GetEstado(){
         return $this->estado;
     }
+
     function SetEstado(string $Estado){
         $this->estado= $pEstado;
     }
@@ -101,10 +110,12 @@ class Endereco {
     function GetTipo(){
         return $this->tipo;
     }
+
     function SetTipo(string $Tipo){
         $this->tipo= $pTipo;
     }
-
+    
+}
 
 // Criando primeiro objeto da classe usando a palavra reservada NEW
 $endereco = new Endereco;

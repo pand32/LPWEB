@@ -14,8 +14,6 @@ $bancodedados='bd2_uniandrade';
 if (!$conn){
     die("Conexão falhou:" . mysqli_connect_error());
 }
-echo "Banco de dados conectado";
+//echo "Banco de dados conectado";
 
-//Fechando a Conexão
-mysqli_close($conn);
 ?>

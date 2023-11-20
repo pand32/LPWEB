@@ -259,7 +259,7 @@ td {
     translate: 160% -130%;
 }
 
-/* Testo do botão */
+/* Texto do botão */
 .botaoText {
     text-align: center;
 }
@@ -318,3 +318,18 @@ td {
     width: 6vw;
     font-size: 70%;
 }
+
+.botaoRead {
+    height: 5vh;
+    width: 20vw;
+    border-color: #000000;
+    background-color: rgb(217, 255, 242, 40);
+    border-radius: 10px;
+    box-shadow: 0 0 0 0.1vw rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 25vw;
+    translate: 0% -200%;
+}
+

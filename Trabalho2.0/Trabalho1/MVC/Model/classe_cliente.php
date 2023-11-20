@@ -77,7 +77,8 @@ class Cliente {
     function SetOrigem(string $Origem){
         $this->origem= $pOrigem;
     }
-
+    
+}
     
 
 
