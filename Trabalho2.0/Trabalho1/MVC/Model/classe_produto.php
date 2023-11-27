@@ -22,7 +22,7 @@ class Produto {
         $this->voltagem = "";
         $this->id_cor = 0;
 
-        echo "Criei um objeto da classe Produto "._CLASS_;
+        echo "Criei um objeto da classe Produto ".__CLASS__;
     }
 
     
