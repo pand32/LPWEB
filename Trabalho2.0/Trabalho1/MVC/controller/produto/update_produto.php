@@ -1,7 +1,8 @@
 <?php
 require_once("../mysqli_conexao.php");
+$response = array(); // Crie um array para armazenar a resposta
 
-if(isset($_POST['update'])){
+if(isset($_POST)){
     $id_produto = mysqli_real_escape_string($conn, $_POST['id_produto']);
     $desc_produto = mysqli_real_escape_string($conn, $_POST['desc_produto']);
     $capacidade = mysqli_real_escape_string($conn, $_POST['capacidade']);
@@ -10,10 +11,18 @@ if(isset($_POST['update'])){
     $voltagem = mysqli_real_escape_string($conn, $_POST['voltagem']);
 
     if(empty($desc_produto)) {
-        echo "<font color='red'>Produto precisa ser preenchido</font>";
+        $response['erro'] =  "Produto precisa ser preenchido";
     } else {
         $result = mysqli_query($conn, "UPDATE produto SET desc_produto='$desc_produto' WHERE id_produto=$id_produto");
-        echo "<font color='green'>Produto atualizado";
+        if ($result) {
+            $response['mensagem'] = "Produto atualizado";
+          } else {
+            $response['erro'] = "Erro ao atualizarProduto: " . mysqli_error($conn);
+        }
     }
-    echo "<a href='../../view/produto/read_produto.php'>Voltar para a lista de produtos";
 }
+
+// Envie a resposta como JSON
+header('Content-Type: application/json');
+echo json_encode($response);
+?>

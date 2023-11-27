@@ -18,6 +18,11 @@ body {
     background-color: #a3a3a3;    
 }
 
+a {
+    color: blue;
+    text-decoration: none;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -129,6 +134,40 @@ body {
     align-self: center;
     text-align: center;
     
+}
+
+#submit {
+    margin-bottom: 20px;
+}
+
+#modal {
+    position: absolute;
+    align-self: center;
+    border-style: solid;
+    border-color: #000000;
+    border-radius: 50px;
+    top: 32%;
+    width: 400px;
+    height: 400px;
+    background-color: rgb(15, 201, 160);
+    visibility: hidden;
+    
+}
+#resposta {
+    margin-top: 30%;
+    margin-left: 50px;
+    width: 300px;
+    color: #000000;
+    text-align: center;
+}
+
+#button {
+    margin-top: 20%;
+    margin-left: 90px;
+    width: 200px;
+    border-color: #000000;
+    border-radius: 50px;
+    text-align: center;
 }
 
 @media (min-width: 0px) {

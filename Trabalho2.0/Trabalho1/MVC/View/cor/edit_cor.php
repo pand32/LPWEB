@@ -5,7 +5,6 @@ $id = $_GET['id_cor'];
 
 $result = mysqli_query($conn, "SELECT * FROM cor WHERE id_cor =$id");
 $resultData = mysqli_fetch_assoc($result);
-
 $desc = $resultData['desc_cor'];
 ?>
 <!DOCTYPE html>
@@ -16,6 +15,9 @@ $desc = $resultData['desc_cor'];
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Editando cor</title>
   <link rel="stylesheet" href="cor.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="cor.js"></script>
+
 
 </head>
 
@@ -42,15 +44,19 @@ $desc = $resultData['desc_cor'];
     </div>
     <div class='form'>
 
-      <form name="edit" method="post" action="../../controller/cor/update_cor.php">
+      <form id="addForm" name="edit" method="post" action="../../controller/cor/update_cor.php">
         <p>Descricao</p>
-        <input type="text" name="desc_cor" value=<?php echo $desc ?>>
+        <input type="text" name="desc_cor" value="<?php echo $desc ?>">
         <input type="hidden" name="id_cor" value=<?php echo $id ?>>
-        <input type="submit" name="update" value="Atualizar">
+        <input id="submit" type="submit" name="update" value="Atualizar">
 
         <br>
         <br>
       </form>
+    </div>
+    <div id="modal">
+      <div id="resposta"></div>
+      <input id="button" type="button" value="OK" onclick="Click()">
     </div>
   </div>
 

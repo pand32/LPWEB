@@ -20,6 +20,8 @@ $genero = $resultData['genero'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editando Cliente</title>
     <link rel="stylesheet" href="cliente.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="cliente.js"></script>
 </head>
 
 <body>
@@ -44,7 +46,7 @@ $genero = $resultData['genero'];
             </table>
         </div>
         <div class='form'>
-            <form name="edit" method="post" action="../../controller/cliente/update_cliente.php">
+            <form id="addForm" name="edit" method="post" action="../../controller/cliente/update_cliente.php">
                 <p>Nome do Cliente</p>
                 <input type="text" name="nome_cliente" value="<?php echo $desc ?>">
                 <input type="hidden" name="id_cliente" value="<?php echo $id ?>">
@@ -61,10 +63,15 @@ $genero = $resultData['genero'];
                     <option value="Feminino">Feminino</option>
                     <option value="Outro">Outro</option>
                 </select><br><br>
-                <input type="submit" name="update" value="Atualizar">
+                <input id="submit" type="submit" name="update" value="Atualizar">
             </form>
         </div>
+        <div id="modal">
+            <div id="resposta">Cliente adicionado com sucesso</div>
+            <input id="button" type="button" value="OK" onclick="Click()">
+        </div>
     </div>
+    
 
 </body>
 

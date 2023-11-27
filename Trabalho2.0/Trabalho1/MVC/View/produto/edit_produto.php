@@ -21,7 +21,8 @@ $voltagem = $resultData['voltagem'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editando Produto</title>  
     <link rel="stylesheet" href="produto.css">
-
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="produto.js"></script>
 
 </head>
 
@@ -49,7 +50,7 @@ $voltagem = $resultData['voltagem'];
 
         <div class='form'>
 
-            <form name="edit" method="post" action="../../controller/produto/update_produto.php">
+            <form id="addForm" name="edit" method="post" action="../../controller/produto/update_produto.php">
                 <p>Descrição do Produto</p>
                 <input type="text" name="desc_produto" value="<?php echo $desc_produto; ?>">
                 <input type="hidden" name="id_produto" value="<?php echo $id_produto ?>">
@@ -65,9 +66,14 @@ $voltagem = $resultData['voltagem'];
 
                 <p>Voltagem</p>
                 <input type="text" name="voltagem" value="<?php echo $voltagem; ?>">
-
-                <input type="submit" name="update" value="Atualizar">
+                <br><br>
+                <input id="submit" type="submit" name="update" value="Atualizar">
             </form>
+        </div>
+        
+        <div id="modal">
+            <div id="resposta"></div>
+            <input id="button" type="button" value="OK" onclick="Click()">
         </div>
     </div>
 </body>

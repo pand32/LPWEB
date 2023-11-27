@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Novo Cliente</title>
     <link rel="stylesheet" href="cliente.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="cliente.js"></script>
 </head>
 
 <body>
@@ -30,7 +32,7 @@
             </table>
         </div>
         <div class='form'>
-            <form action="../../controller/cliente/create_cliente.php" method="post" name="add">
+            <form id="addForm" action="../../controller/cliente/create_cliente.php" method="post" name="add">
                 <p>Nome Cliente</p>
                 <input type="text" name="nome_cliente">
 
@@ -52,10 +54,13 @@
                 <br>
                 <br>
 
-                <input type="submit" name="submit" value="Adicionar">
+                <input id="submit" type="submit" name="submit" value="Adicionar">
             </form>
+        </div>
+        <div id="modal">
+            <div id="resposta"></div>
+            <input id="button" type="button" value="OK" onclick="Click()">
         </div>
     </div>
 </body>
-
 </html>

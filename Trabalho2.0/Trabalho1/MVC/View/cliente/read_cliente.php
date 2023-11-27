@@ -10,6 +10,8 @@ $result = mysqli_query($conn, "SELECT * FROM cliente");
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cadastro de Cliente</title>
   <link rel="stylesheet" href="cliente.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="cliente.js"></script>
 </head>
 
 <body>
@@ -45,15 +47,19 @@ $result = mysqli_query($conn, "SELECT * FROM cliente");
             echo "<tr>";
             echo "<td>" . $res['nome_cliente'] . "</td>";
             echo "<td><a href='edit_cliente.php?id_cliente=$res[id_cliente]'>Editar</a>|
-                    <a href='../../controller/cliente/del_cliente.php?id_cliente=$res[id_cliente]' 
-                    onClick=\"return confirm('Tem certeza?')\">Deletar</a></td>";
+                    <a href='#' onClick= 'Delete($res[id_cliente])'>Deletar</a></td>";
             echo "</tr>";
           }
           ?>
         </tbody>
       </table>
     </div>
+    <div id="modal">
+            <div id="resposta">Cliente adicionado com sucesso</div>
+            <input id="button" type="button" value="OK" onclick="ClickD()">
+    </div>
   </div>
+  
 </body>
 
 </html>

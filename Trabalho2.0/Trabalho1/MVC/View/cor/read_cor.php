@@ -10,6 +10,9 @@ $result = mysqli_query($conn, "SELECT * FROM cor");
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cadastro de Cores</title>
   <link rel="stylesheet" href="cor.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="cor.js"></script>
+
 </head>
 
 <body>
@@ -45,13 +48,17 @@ $result = mysqli_query($conn, "SELECT * FROM cor");
             echo "<tr>";
             echo "<td>" . $res['desc_cor'] . "</td>";
             echo "<td><a href='edit_cor.php?id_cor=$res[id_cor]'>Editar</a>|
-                   <a href='../../controller/cor/del_cor.php?id_cor=$res[id_cor]' 
-                  onClick=\"return confirm('Tem certeza?')\">Deletar</a></td>";
+                   <a href='#' 
+                  onClick= 'Delete($res[id_cor])' >Deletar</a></td>";
             echo "</tr>";
           }
           ?>
         </tbody>
       </table>
+    </div>
+    <div id="modal">
+      <div id="resposta"></div>
+      <input id="button" type="button" value="OK" onclick="ClickD()">
     </div>
   </div>
 

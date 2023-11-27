@@ -7,6 +7,9 @@
   <title>Nova Cor</title>
   <link rel="stylesheet" href="cor.css">
 
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="cor.js"></script>
+
 </head>
 
 <body>
@@ -28,22 +31,26 @@
           <p>
             <td><a href="read_cor.php">Voltar</a></td>
           </p>
-          
+
       </table>
     </div>
 
-      <div class='form'>
-        <form action="../../controller/cor/create_cor.php" method="post" name="add">
-          <p>Descrição</p>
-          <input type="text" name="desc_cor">
-          <br>
-          <br>
-          <input type="submit" name="submit" value="Adicionar">
-          <br>
+    <div class='form'>
+      <form id="addForm" action="../../controller/cor/create_cor.php" method="post" name="add">
+        <p>Descrição</p>
+        <input type="text" name="desc_cor">
+        <br>
+        <br>
+        <input id="submit" type="submit" name="submit" value="Adicionar">
+        <br>
 
-        </form>
-      </div>
-      </div>
+      </form>
+    </div>
+    <div id="modal">
+      <div id="resposta"></div>
+      <input id="button" type="button" value="OK" onclick="Click()">
+    </div>
+  </div>
 
 </body>
 

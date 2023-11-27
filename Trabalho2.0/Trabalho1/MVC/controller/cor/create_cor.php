@@ -1,27 +1,28 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adicionando Cor</title>;;;
-  </head>
-<body>    
 <?php
 require_once("../mysqli_conexao.php");
 
-if(isset($_POST['submit'])){
-    $desc = mysqli_real_escape_string($conn, $_POST['desc_cor']);
+$response = array(); // Crie um array para armazenar a resposta
 
-    if(empty($desc)){
-        echo "<font color = 'red'>Descrição não pode ficar em branco</font><br/>";
+if (isset($_POST)) {
+  $desc = mysqli_real_escape_string($conn, $_POST['desc_cor']);
+
+  if (empty($desc)) {
+    $response['erro'] = "Descrição não pode ficar em branco";
+  } else {
+    $result = mysqli_query(
+      $conn,
+      "INSERT INTO cor (desc_cor) VALUES ('$desc')"
+    );
+    if ($result) {
+      $response['mensagem'] = "Cor adicionado com sucesso";
     } else {
-        $result = mysqli_query($conn, 
-          "INSERT INTO cor (desc_cor) VALUES ('$desc')");
-        echo "<p><font color='green'>Cor adicionada</p>";
+      $response['erro'] = "Erro ao adicionar Cor: " . mysqli_error($conn);
     }
-    echo "<a href='../../view/cor/adicionar_cor.php'>Voltar à tela anterior</a>";
+  }
+
 }
+
+// Envie a resposta como JSON
+header('Content-Type: application/json');
+echo json_encode($response);
 ?>
-</body>
-</html>

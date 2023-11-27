@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Novo Produto</title>
   <link rel="stylesheet" href="produto.css">
-
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="produto.js"></script>
 </head>
 
 <body>
@@ -31,8 +32,7 @@
       </table>
     </div>
     <div class='form'>
-
-      <form action="../../controller/produto/create_produto.php" method="post" name="add">
+      <form id="addForm" action="../../controller/produto/create_produto.php" method="post" name="add">
         <p>Descrição</p>
         <input type="text" name="desc_produto">
         <p>Capacidade</p>
@@ -43,8 +43,14 @@
         <input type="text" name="vlr_custo">
         <p>Voltagem</p>
         <input type="text" name="voltagem">
-        <input type="submit" name="submit" value="Adicionar">
+        <br><br>
+        <input id="submit" type="submit" name="submit" value="Adicionar">
       </form>
+    </div>
+
+    <div id="modal">
+      <div id="resposta"></div>
+      <input id="button" type="button" value="OK" onclick="Click()">
     </div>
   </div>
 

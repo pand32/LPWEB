@@ -10,6 +10,8 @@ $result = mysqli_query($conn, "SELECT * FROM produto");
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cadastro de Produto</title>
   <link rel="stylesheet" href="produto.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="produto.js"></script>
 
 
 </head>
@@ -50,14 +52,18 @@ $result = mysqli_query($conn, "SELECT * FROM produto");
             echo "<tr>";
             echo "<td>" . $res['desc_produto'] . "</td>";
             echo "<td><a href='edit_produto.php?id_produto=$res[id_produto]'>Editar</a>|
-                   <a href='../../controller/produto/del_produto.php?id_produto=$res[id_produto]' 
-                  onClick=\"return confirm('Tem certeza?')\">Deletar</a></td>";
+                   <a href='#' onClick= 'Delete($res[id_produto])' >Deletar</a></td>";
             echo "</tr>";
           }
           ?>
         </tbody>
       </table>
 
+    </div>
+    
+    <div id="modal">
+            <div id="resposta">Cliente adicionado com sucesso</div>
+            <input id="button" type="button" value="OK" onclick="ClickD()">
     </div>
   </div>
 

@@ -1,21 +1,19 @@
 <?php
 require_once("../mysqli_conexao.php");
 
+$response = array(); // Crie um array para armazenar a resposta
+
 $id = $_GET['id_cor'];
 
 $result = mysqli_query($conn, "DELETE FROM cor WHERE id_cor = $id");
+if ($result) {
+    $response['mensagem'] = "Cor excluida com sucesso";
+  } else {
+    $response['erro'] = "Erro ao adicionar Cor: " . mysqli_error($conn);
+}
+// Envie a resposta como JSON
+header('Content-Type: application/json');
+echo json_encode($response);
 ?>
-<!DOCTYPE html>
-<html lang="pt-BR">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cor excluida</title>
-    </head>
-    <body>
-        <p>Cor excluida!</p>
-        <p><a href="../../view/cor/read_cor.php">Voltar para lista de cores</a></p>
-    </body>
-</html>
 
