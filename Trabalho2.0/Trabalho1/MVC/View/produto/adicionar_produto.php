@@ -50,7 +50,7 @@
 
     <div id="modal">
       <div id="resposta"></div>
-      <input id="button" type="button" value="OK" onclick="Click()">
+      <input id="button" type="" value="OK" onclick="Click()">
     </div>
   </div>
 

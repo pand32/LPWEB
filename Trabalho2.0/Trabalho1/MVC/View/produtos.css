@@ -85,8 +85,8 @@ body {
 
 #carrinho {
     position: absolute;
-    right: 100px;
-    top: 10px;
+    right: 60px;
+    top: 27px;
     width: 50px;
     height: 50px;
     cursor: pointer;
@@ -123,23 +123,38 @@ body {
     display: grid;
     grid-column-gap: 0px;
     grid-row-gap: 2.4em;
-    translate: 10vw 6vh;
+    margin-left: 40px;
+    translate: 0px 6vh;
 }
 
 
 @media (min-width: 0px) {
     .produtos { grid-template-columns: repeat(1,  0.29fr); }
     #logoT {font-size: 15px;}
-    #index { translate: 0vw 0vh; font-size: 20px;}
-    #empresa { translate: -5vw 0vh; font-size: 20px; }
-    #contato { translate: -10vw 0vh; font-size: 20px; }
+    #index { visibility: hidden; }
+    #empresa { visibility: hidden; }
+    #contato { visibility: hidden; }
+}
+
+@media (min-width: 500px) {
+    .produtos { grid-template-columns: repeat(2,  0.5fr); }
+    #index { translate: -5vw 0vh; font-size: 20px; visibility: visible;}
+    #empresa { translate: -12vw 0vh; font-size: 20px; visibility: visible;}
+    #contato { translate: -20vw 0vh; font-size: 20px; visibility: visible;}
+}
+
+@media (min-width: 800px) {
+    .produtos { grid-template-columns: repeat(2,  0.5fr); }
+    #index { translate: 0vw 0vh; font-size: 20px; }
+    #empresa { translate: -10vw 0vh; font-size: 20px; }
+    #contato { translate: -20vw 0vh; font-size: 20px; }
 }
 
 @media (min-width: 1200px) {
     .produtos { grid-template-columns: repeat(2,  0.5fr); }
     #index { translate: 15vw 0vh; }
     #empresa { translate: 2vw 0vh; }
-    #contato { translate: -10vw 0vh; }
+    #contato { translate: -10vw 0vh;}
 }
 
 @media (min-width: 1910px) {
@@ -182,8 +197,7 @@ body {
     color:firebrick;
 }
 
-#button {
-    margin-left: 190px;
+#buttonCompra {
     border-radius: 20px;
 }
 
@@ -212,6 +226,7 @@ body {
     border-collapse: collapse;
     background-color: rgb(215, 255, 255, 40%);
     border-spacing: 0px;
+    margin-left: 20px;
 }
 
 .tabelaCompras tbody, td, th {
@@ -225,8 +240,8 @@ body {
 #Comprar {
     width: 300px;
     border-radius: 20px;
-    margin-top: 10px;
-    margin-left: 85%;
+    margin-top: 20px;
+    margin-left: 70%;
 }
 
 #menuCompras:checked ~ #listaCompras {
@@ -234,6 +249,42 @@ body {
     animation-fill-mode: forwards;
 }
 
+#qtd {
+    width: 80px;
+    margin-left: 150px;
+    text-align: right;
+}
+
+#modal {
+    position: absolute;
+    align-self: center;
+    border-style: solid;
+    border-color: #000000;
+    border-radius: 50px;
+    top: 32%;
+    width: 400px;
+    height: 400px;
+    background-color: #FFDD83;
+    visibility: hidden;
+    
+}
+
+#resposta {
+    margin-top: 30%;
+    margin-left: 50px;
+    width: 300px;
+    color: #000000;
+    text-align: center;
+}
+
+#button {
+    margin-top: 20%;
+    margin-left: 90px;
+    width: 200px;
+    border-color: #000000;
+    border-radius: 50px;
+    text-align: center;
+}
 
 
 
